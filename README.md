@@ -177,4 +177,5 @@ BizScout is built in accordance with official data use terms:
 - No personal non-business consumer data is stored.
 - Users must abide by applicable telemarketing and communications laws before contacting leads.
 #   B u s i n e s s - F i n d e r  
+ #   B u s i n e s s - F i n d e r  
  
