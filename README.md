@@ -4,7 +4,7 @@ A modern, high-precision local business intelligence and lead-generation web app
 
 BizScout allows digital agencies, coaching marketers, freelancers, and sales professionals to find local businesses (e.g. computer institutes, coaching centers, clinics, retail shops) in places like **Gorakhpur**, **Chauri Chaura**, or any city worldwide, view structured data, save leads to an integrated CRM pipeline, export clean spreadsheets to **Excel (.xlsx)** or **CSV**, and generate hyper-personalized sales outreach with **Free Gemini AI**.
 
----
+
 
 ## ✨ Key Highlights & Features
 
@@ -176,6 +176,8 @@ BizScout is built in accordance with official data use terms:
 - Data is collected exclusively from public directory listings and official APIs.
 - No personal non-business consumer data is stored.
 - Users must abide by applicable telemarketing and communications laws before contacting leads.
-#   B u s i n e s s - F i n d e r  
- #   B u s i n e s s - F i n d e r  
+#   B u s i n e s s - F i n d e r 
+ 
+ #   B u s i n e s s - F i n d e r 
+ 
  
