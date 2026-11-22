@@ -1,10 +1,10 @@
-# 📍 BizScout — Local Business Data Finder & Lead Generator
+content = r"""# 📍 BizScout — Local Business Data Finder & Lead Generator
 
-A modern, high-precision local business intelligence and lead-generation web application built with **React**, **Vite**, **Tailwind CSS**, **Node.js**, **Express**, and **SQLite**. 
+A modern, high-precision local business intelligence and lead-generation web application built with **React**, **Vite**, **Tailwind CSS**, **Node.js**, **Express**, and **SQLite**.
 
 BizScout allows digital agencies, coaching marketers, freelancers, and sales professionals to find local businesses (e.g. computer institutes, coaching centers, clinics, retail shops) in places like **Gorakhpur**, **Chauri Chaura**, or any city worldwide, view structured data, save leads to an integrated CRM pipeline, export clean spreadsheets to **Excel (.xlsx)** or **CSV**, and generate hyper-personalized sales outreach with **Free Gemini AI**.
 
-
+---
 
 ## ✨ Key Highlights & Features
 
@@ -52,24 +52,29 @@ BizScout allows digital agencies, coaching marketers, freelancers, and sales pro
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
+
 - **Node.js** v18 or higher (Node v20/v22 recommended)
 - **npm** v9 or higher
 
 ### 2. Quick Launch
 
-#### Start Backend Server:
+#### Start Backend Server
+
 ```bash
 cd server
 npm run dev
 ```
-*The backend API will run at `http://localhost:5000` (Health check: `http://localhost:5000/api/health`).*
 
-#### Start Frontend Client (in a separate terminal):
+The backend API will run at `http://localhost:5000` (Health check: `http://localhost:5000/api/health`).
+
+#### Start Frontend Client (in a separate terminal)
+
 ```bash
 cd client
 npm run dev
 ```
-*The Vite application will start at `http://localhost:5173`.*
+
+The Vite application will start at `http://localhost:5173`.
 
 ---
 
@@ -84,6 +89,7 @@ You can run searches immediately without any keys! To use live Google Places API
 3. Click **Save Preferences**. Keys are stored safely in local storage and sent via secure headers.
 
 Alternatively, add them to `server/.env`:
+
 ```env
 PORT=5000
 GOOGLE_MAPS_API_KEY=your_google_places_api_key
@@ -95,33 +101,33 @@ CLIENT_URL=http://localhost:5173
 
 ## 📂 Project Structure
 
-```
+```text
 Business Finder/
-├── client/                     # React + Vite Frontend
+├── client/                         # React + Vite Frontend
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Navbar.jsx          # Glassmorphic header & tab switcher
-│   │   │   ├── HeroSection.jsx     # Glowing hero, quick-search chips & stats
-│   │   │   ├── SearchForm.jsx      # Location, category, radius & field controls
-│   │   │   ├── ResultsTable.jsx    # Dynamic columns, batch actions & export
+│   │   │   ├── Navbar.jsx           # Glassmorphic header & tab switcher
+│   │   │   ├── HeroSection.jsx      # Glowing hero, quick-search chips & stats
+│   │   │   ├── SearchForm.jsx       # Location, category, radius & field controls
+│   │   │   ├── ResultsTable.jsx     # Dynamic columns, batch actions & export
 │   │   │   ├── LeadManagement.jsx  # Full CRM pipeline with inline editing
-│   │   │   ├── Dashboard.jsx       # Analytics & search history re-run
-│   │   │   ├── AiStudio.jsx        # Standalone AI pitch workshop
+│   │   │   ├── Dashboard.jsx        # Analytics & search history re-run
+│   │   │   ├── AiStudio.jsx         # Standalone AI pitch workshop
 │   │   │   ├── AiOutreachModal.jsx # Instant modal for lead pitch generation
 │   │   │   ├── SettingsModal.jsx   # API key and preferences manager
-│   │   │   └── Footer.jsx          # Legal compliance & links
+│   │   │   └── Footer.jsx           # Legal compliance & links
 │   │   ├── services/
-│   │   │   └── api.js              # Central Axios client with interceptors
-│   │   ├── App.jsx                 # Main application state coordinator
-│   │   ├── index.css               # Tailwind CSS & glowing animations
-│   │   └── main.jsx                # React root mount
+│   │   │   └── api.js               # Central Axios client with interceptors
+│   │   ├── App.jsx                  # Main application state coordinator
+│   │   ├── index.css                # Tailwind CSS & glowing animations
+│   │   └── main.jsx                 # React root mount
 │   ├── package.json
 │   └── vite.config.js
 │
-├── server/                     # Node.js + Express Backend
+├── server/                          # Node.js + Express Backend
 │   ├── src/
 │   │   ├── config/
-│   │   │   └── db.js               # SQLite Database schema & repository
+│   │   │   └── db.js                # SQLite Database schema & repository
 │   │   ├── controllers/
 │   │   │   ├── businessController.js # Search & history endpoints
 │   │   │   ├── leadController.js     # Lead CRUD, CRM stats & export
@@ -131,16 +137,16 @@ Business Finder/
 │   │   │   ├── leadRoutes.js
 │   │   │   └── aiRoutes.js
 │   │   ├── services/
-│   │   │   ├── placesService.js    # Google Places + OSM + Fallback engine
-│   │   │   ├── aiService.js        # Gemini AI + Smart template synthesizer
-│   │   │   └── exportService.js    # Excel (.xlsx) & CSV generation
-│   │   └── server.js               # Express app, rate limiter, middleware
+│   │   │   ├── placesService.js      # Google Places + OSM + Fallback engine
+│   │   │   ├── aiService.js          # Gemini AI + Smart template synthesizer
+│   │   │   └── exportService.js      # Excel (.xlsx) & CSV generation
+│   │   └── server.js                 # Express app, rate limiter, middleware
 │   ├── .env
 │   └── package.json
 │
 ├── database/
-│   └── schema.sql              # Production SQL schema for MySQL / PostgreSQL
-├── package.json                # Root package scripts
+│   └── schema.sql                    # Production SQL schema for MySQL / PostgreSQL
+├── package.json                      # Root package scripts
 └── README.md
 ```
 
@@ -149,14 +155,15 @@ Business Finder/
 ## 📡 API Reference
 
 ### Business Search
+
 - `POST /api/businesses/search`
   - Body: `{ "location": "Gorakhpur", "businessType": "Computer Institutes", "radius": 10000, "limit": 20, "fields": ["name", "phone", "address"] }`
   - Returns normalized business listings with cross-referenced CRM saved status.
-
 - `GET /api/businesses/history`
   - Returns recent queries.
 
 ### Leads CRM
+
 - `GET /api/leads?status=All&search=` — Get saved leads.
 - `POST /api/leads` — Save single lead or `{ leads: [...] }` bulk save.
 - `PATCH /api/leads/:id` — Update status, notes, follow-up date, or service interest.
@@ -165,6 +172,7 @@ Business Finder/
 - `GET /api/leads/export?format=xlsx` — Export database leads to Excel spreadsheet.
 
 ### AI Outreach
+
 - `POST /api/ai/outreach`
   - Body: `{ "business": { ... }, "objective": "web_dev", "senderName": "Apex Agency" }`
   - Returns customized WhatsApp message, cold email, and AI lead score.
@@ -172,12 +180,20 @@ Business Finder/
 ---
 
 ## 📜 Compliance & Ethics
+
 BizScout is built in accordance with official data use terms:
+
 - Data is collected exclusively from public directory listings and official APIs.
 - No personal non-business consumer data is stored.
 - Users must abide by applicable telemarketing and communications laws before contacting leads.
-#   B u s i n e s s - F i n d e r 
- 
- #   B u s i n e s s - F i n d e r 
- 
- 
+"""
+
+output_path = "/mnt/data/BizScout_README.md"
+pypandoc.convert_text(
+    content,
+    "md",
+    format="md",
+    outputfile=output_path,
+    extra_args=["--standalone"]
+)
+print(f"Created: {output_path}")
